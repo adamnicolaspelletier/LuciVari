@@ -1,0 +1,26 @@
+{% extends 'lucivari/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	LuciVari - Data Transformation
+	
+{% endblock %}
+
+{% block body_block %}
+<div class="container-fluid">
+	<div class="row">
+ 		<div class="col-sm-2 col-md-1">
+ 		</div>
+ 		<div class="col-sm-10 col-md-11">
+			
+			<b> Step 3: Generate File</b><br>
+			<a href="{% url 'consol_download' %}" class="btn btn-success btn-lg"> 
+			Download Plate Consolidation file  </a>
+			
+			
+		</div>
+		
+	</div>
+</div>
+	
+{% endblock %}

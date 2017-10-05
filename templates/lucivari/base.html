@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="adamnicolaspelletier" >
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+
+    <title>
+		LuciVari - {% block title %}Visualization of hight-throughput SNV testing{% endblock %}
+		</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://v4-alpha.getbootstrap.com//dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+    
+  </head>
+
+  <body>
+  	
+  		<div class="row h-200">
+	    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+	      <button class="navbar-toggler navbar-toggler-right hidden-lg-up" 
+	      		  type="button"
+	      		  data-toggle="collapse" 
+	      		  data-target="#navbar" 
+	      		  aria-controls="navbar" 
+	      		  aria-expanded="false" 
+	      		  aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+	      <a class="navbar-brand" href="{% url 'index' %}">LuciVari</a>
+	
+	      <div class="collapse navbar-collapse" id="navbar">
+	        <ul class="navbar-nav mr-auto">
+	          <li class="nav-item active">
+	            <a class="nav-link" href="{% url 'index' %}">
+	            	Home 
+	            </a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="{% url 'about' %}">
+	            	About
+	            </a>
+	          </li>
+	   
+	          {% if user.is_authenticated %}
+	
+	          <li class="nav-item">
+	            <a class="nav-link" href="{% url 'data_transform' %}">
+		            Data Transformation
+	            </a>
+	          <li class="nav-item">
+	            <a class="nav-link" href="{% url 'auth_logout' %}?next=/lucivari/">
+		            Logout
+	            </a>
+	          </li>
+	          {% else %}
+	         <!--  <li class="nav-item">
+	            <a class="nav-link" href="{% url 'registration_register' %}">
+		            Register Here
+	            </a> -->
+	          </li>
+	           <li class="nav-item">
+	            <a class="nav-link" href="{% url 'auth_login' %}">
+		            Login
+	            </a>
+	          </li>
+	          
+	          </li>
+	          {% endif %}
+	          {% if user.is_superuser %}
+	           <li class="nav-item">
+	            <a class="nav-link" href="{% url 'admin:index' %}">
+		            Admin Panel
+	            </a>
+	          {% endif %}
+	        </ul>
+	<!--        <form class="form-inline mt-2 mt-md-0">
+	          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+	          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	        </form>-->
+	      </div>
+	    </nav>
+    	</div>
+ 
+	<br><br><br>
+	{% block body_block %}{% endblock %}
+	
+<!-- 	
+      <div class="row">
+      
+    		<div class="col-sm-4 col-md-2">
+    		<hr><hr><hr>
+  				<div class="card" style="margin-bottom: 6px;">
+  					<div class="card-header bg-primary" style="color: white;">
+  						<h6 class="card-title text-center text-justify">Show normal tissue(s) types</h6>
+ 					</div>
+  		
+     				<div class="card-block">
+   					Testing First Panel
+   					<form method="get" action="" accept-chartset='utf-8'>
+     					{% csrf_token %}
+     					{{ form.as_p }}
+     					<input type="submit" value="Submit" />
+     					</form>
+   				</div>
+				</div>
+				<div class="card"  style="margin-bottom: 6px;">
+  					<div class="card-header bg-primary" style="color: white;">
+  						<h6 class="card-title text-center">Show something else</h6>
+ 					</div>
+  		
+     				<div class="card-block">
+   					Testing Second Panel
+   					<form method="get" action="" accept-chartset='utf-8'>
+     					{% csrf_token %}
+     					{{ form.as_p }}
+     					<input type="submit" value="Submit" />
+     					</form>
+   				</div>
+				</div>
+   			
+				
+     		
+         </div>
+			<div class="col-sm-8 col-md-10 main">
+			<hr><hr><hr>
+  			 
+ 			</div>
+	     		
+	   </div>
+    -->
+  			
+      
+<!-- classes for input from CEVIN: panel, panel-primary, panel-heading for the panel heading
+then panel-body, with ID tissuePanel for body. 
+form:  class form-control
+dataprovide: typeahead, autocomplete OFF
+Added a input-group-btn
+
+-->
+        		
+
+   
+      
+   
+  </div>
+   
+      
+         
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'js/lucivari-jquery.js' %}"></script>
+	<script src="{% static 'js/lucivari-ajax.js' %}"></script>
+    <script 
+      src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js">
+    </script>
+    <script 
+      src="http://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js">
+    </script>
+    <script src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script 
+    	src="http://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js">
+    </script>
+  </body>
+</html>
+
+

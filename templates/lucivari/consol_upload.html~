@@ -1,0 +1,39 @@
+{% extends 'lucivari/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	LuciVari - Data Transformation
+	
+{% endblock %}
+
+{% block body_block %}
+<div class="container-fluid">
+	<div class="row">
+ 		<div class="col-sm-2 col-md-1">
+ 		</div>
+ 		<div class="col-sm-10 col-md-11">
+			
+			Make sure the data is properly organized, as designated in the template. 
+			<br><br>Template can be downloaded <a href="{% url 'static_file_download' %}"> here</a>
+			<br>
+			<br>
+			
+			
+			<i>Example: Exp0001_170920_GATA2_COS7.txt</i>
+			
+			  <br><br>
+			  <b> Step 1: </b>
+			  <br>
+			  <b>Firefly File</b>
+			  <form method="post" enctype="multipart/form-data">
+			    {% csrf_token %}
+			    {{ form.as_p }}
+			    <button type="submit">Next</button>
+			  </form>
+			 
+		</div>
+		
+	</div>
+</div>
+	
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'lucivari/base.html' %}
+{% load staticfiles %}
+
+ 
+{% block title_block %}
+	Rango - About
+	
+{% endblock %}
+
+{% block body_block %}
+        <div>
+            UNDER CONSTRUCTION <br /> 
+            <strong>{{ boldmessage }}</strong><br />
+        </div>
+        <div>
+        		The LuciVari Web App has been put together by Adam Pelletier <Br><br>
+           
+            The aim of the app is to allow easy visualization for a large scale luciferase assay project, accross, hundreds at Single Nucleotide Variants, dozens 
+            of transcription factors and multiple cell lines. <br><br>
+            
+            While everyone can look at placeholder results for showcasing purposes, only registered users will be able to see the final result, or add experimental data.
+            <br><br>
+				The application also includes a data transformation tool for easy daat analysis and consolidation following each experiment, to streamline addition of novel data in an automated manner. 
+				
+				           
+        </div>
+
+
+{% endblock %}
+
+{% block sidebar %}
+	<div class="container-fluid">
+      <div class="row">
+        <nav class="col-sm-3 col-md-2  sidebar">
+        		<div class="panel-primary">
+        			<h4 class="panel-title">About Page</h4>
+        		</div>
+        		 <div class="panel-body"
+      				Testing First Panel
+      		
+		<hr>
+        		
+            	
+      </div>
+     		
+   </div>
+      
+      <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main">
+       
+      
+<!-- classes for input from CEVIN: panel, panel-primary, panel-heading for the panel heading
+then panel-body, with ID tissuePanel for body. 
+form:  class form-control
+dataprovide: typeahead, autocomplete OFF
+Added a input-group-btn
+
+-->
+      
+      
+      </div>
+        		
+   </div>
+      
+   <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main">
+    {% endblock %}
+    
+    
+  
+   
+   
+       
+   
+ 

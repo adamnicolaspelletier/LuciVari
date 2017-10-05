@@ -1,0 +1,172 @@
+{% extends 'lucivari/base.html' %}
+{% load staticfiles %}
+ 
+{% block title_block %}
+	Rango
+	
+{% endblock %}
+
+{% block body_block %}
+
+
+<div class="container-fluid">
+	
+
+	<div class="row">
+	   
+	 		<div class="col-sm-4 col-md-2">
+	 		
+	 		<strong> Filter database by: </strong>
+	  				<div class="card" style="margin-bottom: 6px;">
+	  					<div class="card-header bg-primary" style="color: white;">
+	  						<h6 class="card-title text-center text-justify">Show normal tissue(s) types</h6>
+	 					</div>
+	  					
+		  				<div class="card-block">
+						Testing First Panel
+						<form action="" method="post">{% csrf_token %}
+						    {{ form.as_p }}
+						    <input type="submit" value="Create" />
+						</form>
+						
+						<!-- <form method="get" action="" accept-chartset='utf-8'>
+		  					{% csrf_token %}
+		  					{{ form.as_p }}
+		  					<input type="submit" value="Submit" />
+		  					</form> -->
+						</div>
+					</div>
+					
+					
+					<div class="card" id="date" style="margin-bottom: 6px;">
+	  					<div class="card-header bg-primary" style="color: white;">
+	  						<h6 class="card-title text-center">Experiment Date(s)</h6>
+	 					</div>
+	  		
+		  				<div class="card-block">
+		  					<div id="jq-dropdown-1" class="frmDronpDown">
+								<ul>
+									{% for date in dates %}
+									<li> {{ date }} </li>
+									
+									{% endfor %}
+								
+								</ul>
+							</div>
+						
+						</div>
+					</div>
+					
+					<div class="card"  id= "tf" style="margin-bottom: 6px;">
+	  					<div class="card-header bg-primary" style="color: white;">
+	  						<h6 class="card-title text-center">Transcription Factor(s)</h6>
+	 					</div>
+	  		
+		  				<div class="card-block">
+		  					<div id="jq-dropdown-1" class="frmDronpDown">
+								<ul>
+									{% for gene_symbol in tf_set %}
+									<li> {{ gene_symbol }} </li>
+									
+									{% endfor %}
+								
+								</ul>
+							</div>
+						
+						</div>
+					</div>
+					
+					<div class="card"  id= "tf_family" style="margin-bottom: 6px;">
+	  					<div class="card-header bg-primary" style="color: white;">
+	  						<h6 class="card-title text-center">Variant(s)</h6>
+	 					</div>
+	  		
+		  				<div class="card-block">
+		  					<div id="jq-dropdown-1" class="frmDronpDown">
+								<ul>
+									{% for condition in condition_id_set %}
+									<li> {{ condition.snv_id_no.snv }} </li>
+									
+									{% endfor %}
+								
+								</ul>
+							</div>
+						
+						</div>
+					</div>
+					
+					<div class="card"  id= "tf_family" style="margin-bottom: 6px;">
+	  					<div class="card-header bg-primary" style="color: white;">
+	  						<h6 class="card-title text-center">Cell line(s)</h6>
+	 					</div>
+	  		
+		  				<div class="card-block">
+		  					<div id="jq-dropdown-1" class="frmDronpDown">
+								<ul>
+									{% for condition in condition_id_set %}
+									<li> {{ condition.cell_line}} </li>
+									
+									{% endfor %}
+								
+								</ul>
+							</div>
+						
+						</div>
+					</div>
+			
+			
+			
+	  		
+	   </div>
+		<div class="col-sm-8 col-md-10 main">
+		
+	  		<h1> UNDER CONSTRUCTION </h1><br><br>
+			Display Graph here
+			
+			<object data="{% static 'images/lucif.svg' %} "
+				type="image/svg+xml"
+				width= "600" height= "600" 
+				class = "margin-top:2.5">
+			</object> 
+			
+			
+	 			</div>
+  		
+	</div>
+</div>
+
+<!--<div class="row marketing">
+	<div class="col-lg-6">
+		<h4> Most liked categories </h4>
+		<p>
+		{% if categories %}
+	  <ul class="list-group">
+	      {% for category in categories %}
+	      <li class="list-group-item"><a href="{% url 'show_category' category.slug %}">
+	      	{{ category.name }}</a></li>
+	      {% endfor %}
+	  </ul>
+	  {% else %}
+	      <strong>There are no categories present.</strong>
+	  {% endif %}
+	  </p>
+  </div>
+  <div class="col-lg-6">
+	  <h4> Most viewed pages </h4>
+	  <p>
+	  {% if pages %}
+     <ul class="list-group">
+         {% for page in pages %}
+         <li class="list-group-item"><a href="{{ page.url }}">{{ page.title }}</a></li>
+         {% endfor %}
+     </ul>
+	  {% else %}
+	      <strong>There are no pages present.</strong>
+	  {% endif %}
+	  </p>
+	</div>
+</div>
+<img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" /> -->
+        
+        
+{% endblock %}

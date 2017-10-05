@@ -1,0 +1,39 @@
+{% extends 'lucivari/base.html' %}
+{% load staticfiles %}
+
+ 
+{% block title_block %}
+	LuciVari - Data Transformation
+	
+{% endblock %}
+
+{% block body_block %}
+<div class="container-fluid">
+	<div class="row">
+ 		<div class="col-sm-1 col-md-1">
+ 		</div>
+ 		<div class="col-sm-11 col-md-11">
+			
+			<a href="{% url 'report_download' %}" class="btn btn-success btn-lg"> 
+			Download Text Report only  </a>
+			<br><br>
+			<a href="{% url 'zip_download' %}" class="btn btn-danger btn-lg"> 
+			Download Text Report with PDF </a>
+			
+			<br>
+			<!-- <div id="msg">Hello  - I'm here for a JQuery Example too</div> -->
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+    {% endblock %}
+    
+    
+  
+   
+   
+       
+   
+   

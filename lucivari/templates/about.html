@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} 
+{% load staticfiles %} 
+<html>
+
+    <head>
+        <title>Rango - About</title>
+    </head>
+
+    <body>
+        
+        <div>
+            Rango says here is the about page <br /> 
+            <strong>{{ boldmessage }}</strong><br />
+        </div>
+        <div>
+        		This tutorial has been put together by Adam Pelletier
+            <a href="/rango/about/">About</a><br />
+            <img src="{% static "images/google.jpg" %}"
+                 alt="Google us!" /> 
+                 
+            <a href='/rango/'>Main Page</a>
+            <img src="{% media "yahoo.png" %}"
+                 alt="or yahoo....." /> 
+            
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,13 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+
+{% if pages %}
+2 <ul>
+3     {% for page in pages %}
+4     <li><a href="{% url 'goto' %}?page_id={{page.id}}"\>{{ page.title }}</a></li>
+5     {% endfor %}
+6 </ul>
+7 {% else %}
+8     <strong>No pages currently in category.</strong>
+9 {% endif %}
