@@ -243,6 +243,7 @@ def lucifanalysis_report(rawtemp, pdf, outputfile):
 		pdfreport = outputfile.replace(".txt", ".pdf")
 		print "MAKING PDF..."
 		import matplotlib
+		matplotlib.use('Agg')
 		import matplotlib.pyplot as plt
 		import matplotlib.gridspec as gridspec
 		from matplotlib.backends.backend_pdf import PdfPages
